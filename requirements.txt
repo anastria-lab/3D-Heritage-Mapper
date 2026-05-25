@@ -1,0 +1,7 @@
+opencv-python
+numpy
+pandas
+kaggle
+nuscenes-devkit
+torch
+torchvision
