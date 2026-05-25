@@ -19,3 +19,15 @@ An integrated Computer Vision and Geoinformatics pipeline designed to detect urb
 * Python (OpenCV, PyTorch, Pandas)
 * Kaggle API & nuScenes Devkit
 * Agisoft Metashape (External)
+
+## Setup Instructions: Kaggle API
+To use the data exploration scripts in this project, you must authenticate with Kaggle:
+
+1. Log in to your [Kaggle](https://www.kaggle.com/) account.
+2. Click on your profile picture in the top right and select **Settings**.
+3. Scroll down to the **API** section.
+4. Locate the **Legacy API Credentials** header and click the **Create New Token** button. *(Note: Using the newer "Generate New Token" button under "API Tokens" will not give you the required JSON file).*
+5. This will prompt the download of a `kaggle.json` file.
+6. Move this `kaggle.json` file directly into the root directory of this project (`3D-Heritage-Mapper/`).
+
+> **Security Note:** The `.gitignore` file is configured to ignore `kaggle.json`, ensuring your private credentials are never uploaded to GitHub.

@@ -15,3 +15,14 @@ models/
 # Python cache files (Annoying hidden files Python makes automatically)
 __pycache__/
 *.pyc
+
+#Kaggle API token
+API TOKEN = KGAT_e374015a5c4f0a8520cd164d196f99e7
+To use this token, set the KAGGLE_API_TOKEN environment variable:
+export KAGGLE_API_TOKEN=KGAT_e374015a5c4f0a8520cd164d196f99e7
+
+Or save it to ~/.kaggle/access_token, where the client will read it automatically:
+mkdir -p ~/.kaggle && echo KGAT_e374015a5c4f0a8520cd164d196f99e7 > ~/.kaggle/access_token && chmod 600 ~/.kaggle/access_token
+
+Then you can use the client as follows:
+kaggle competitions list
