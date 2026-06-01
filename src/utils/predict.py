@@ -2,31 +2,29 @@ from ultralytics import YOLO
 import os
 
 def main():
-    # 1. Φορτώνουμε το ΕΚΠΑΙΔΕΥΜΕΝΟ μοντέλο μας (το best.pt)
-    model_path = r"C:\Users\akara\OneDrive\Desktop\D_Chatz\3D-Heritage-Mapper\runs\detect\train\weights\best.pt"
+
+    model_path = r"C:\Users\akara\OneDrive\Desktop\D_Chatz\3D-Heritage-Mapper\runs\detect\raw_uncompressed_100_e\weights\best.pt"
     model = YOLO(model_path)
 
-    # 2. Ορίζουμε την εικόνα που θέλουμε να ελέγξουμε
-    # ΠΡΟΣΟΧΗ: Βάλε εδώ το path μιας πραγματικής φωτογραφίας που έχεις στο PC σου!
-    image_path = r"C:\Users\akara\OneDrive\Desktop\D_Chatz\3D-Heritage-Mapper\data\mermaid_dataset\LittleMermaid.v2i.yolo26\test\images\test_3.jpg"
+    # 2. Ορίζουμε τον ΦΑΚΕΛΟ που περιέχει όλες τις test εικόνες
+    folder_path = r"C:\Users\akara\OneDrive\Desktop\D_Chatz\3D-Heritage-Mapper\data\mermaid_dataset\LittleMermaid.yolo26\test\images"
 
-    if not os.path.exists(image_path):
-        print(f"Σφάλμα: Δεν βρέθηκε η εικόνα στη διαδρομή: {image_path}")
-        print("Παρακαλώ βάλε μια σωστή διαδρομή εικόνας στο script.")
+    if not os.path.exists(folder_path):
+        print(f"Σφάλμα: Δεν βρέθηκε ο φάκελος στη διαδρομή: {folder_path}")
         return
 
-    print("Το YOLO26 αναλύει την εικόνα...")
+    print(f"Το YOLO26 ξεκινάει την ομαδική ανάλυση των εικόνων στον φάκελο: {folder_path}...")
     
-    # 3. Εκτέλεση της αναγνώρισης
+    # 3. Εκτέλεση της αναγνώρισης για ΟΛΕΣ τις εικόνες μαζί
     results = model.predict(
-        source=image_path,
-        save=True,           # Αποθηκεύει αυτόματα το αποτέλεσμα με το κουτάκι
-        imgsz=512,           # Ίδιο μέγεθος με αυτό της εκπαίδευσης
-        conf=0.10            # Δείξε μόνο όσα κουτάκια έχουν σιγουριά πάνω από 40%
+        source=folder_path,  # Δίνοντας τον φάκελο, διαβάζει τα πάντα μέσα!
+        save=True,           # Αποθηκεύει όλα τα αποτελέσματα με τα κουτάκια τους
+        imgsz=512,           
+        conf=0.25            # Ανέβασα το conf στο 0.25 μιας και το νέο σου μοντέλο θα είναι πιο σίγουρο
     )
     
-    print("\nΗ αναγνώριση ολοκληρώθηκε!")
-    print("Το αποτέλεσμα αποθηκεύτηκε στον φάκελο: runs\\detect\\predict\\")
+    print("\nΗ ομαδική αναγνώριση ολοκληρώθηκε!")
+    print("Όλες οι επεξεργασμένες εικόνες αποθηκεύτηκαν στον φάκελο: runs\\detect\\predict\\")
 
 if __name__ == '__main__':
     main()
