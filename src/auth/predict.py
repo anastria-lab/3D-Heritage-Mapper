@@ -3,7 +3,7 @@ import os
 
 def main():
 
-    model_path = r"C:\Users\akara\OneDrive\Desktop\D_Chatz\3D-Heritage-Mapper\runs\detect\raw_uncompressed_100_e\weights\best.pt"
+    model_path = r"C:\Users\akara\OneDrive\Desktop\D_Chatz\3D-Heritage-Mapper\runs\detect\augmented_compressed_100_e_deep\weights\best.pt"
     model = YOLO(model_path)
 
     # 2. Ορίζουμε τον ΦΑΚΕΛΟ που περιέχει όλες τις test εικόνες
