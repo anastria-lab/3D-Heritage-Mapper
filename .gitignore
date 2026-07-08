@@ -11,6 +11,9 @@ data/raw/
 data/processed/
 data/metadata/
 models/
+data/
+runs/
+projects/
 
 # Python cache files (Annoying hidden files Python makes automatically)
 __pycache__/

@@ -28,7 +28,7 @@ def convert_mov_to_mp4(input_path, output_path):
 
 def main():
     # Ο φάκελος με τα αρχεία .MOV του iPhone 16
-    video_folder = r"C:\Users\akara\OneDrive\Desktop\D_Chatz\3D-Heritage-Mapper\data\auth"
+    video_folder = r"C:\Users\akara\OneDrive\Desktop\D_Chatz\3D-Heritage-Mapper\projects\3d\data\videos"
 
     if not os.path.exists(video_folder):
         print(f"Σφάλμα: Ο φάκελος δεν υπάρχει: {video_folder}")
