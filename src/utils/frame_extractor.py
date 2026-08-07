@@ -29,7 +29,7 @@ def extract_frames(video_path, output_folder, frame_skip=10):
 
         if not success:
             break
-
+        
         # Only save every Nth frame
         if frame_count % frame_skip == 0:
             # Create a file name with leading zeros (e.g., frame_0001.jpg)

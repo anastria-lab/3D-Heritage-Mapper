@@ -5,7 +5,7 @@ venv/
 # Kaggle and API keys
 kaggle.json
 .env
-
+.jpg
 # Data folders (We NEVER upload raw video or giant datasets to GitHub)
 data/raw/
 data/processed/
@@ -14,6 +14,9 @@ models/
 data/
 runs/
 projects/
+
+src/yolo_encounter_counter
+access_token
 
 # Python cache files (Annoying hidden files Python makes automatically)
 __pycache__/
